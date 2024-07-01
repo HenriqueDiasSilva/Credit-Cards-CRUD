@@ -1,0 +1,49 @@
+{
+    "creditcards": [
+        {
+            "id": 1,
+            "cardName": "Card 01",
+            "bankName": "Nubank",
+            "description": "Nubank cards",
+            "maxCredit": 8000,
+            "active": true,
+            "annualFee": 0,
+            "interestRate": 13.5,
+            "introOffer": 200,
+            "recommededCreditScore": "600-800",
+            "numberOfApplications": 40,
+            "createdDate": "28-08=2023",
+            "termsAndConditions": "The following conditions are applicable for this card"
+        },
+        {
+            "id": 2,
+            "cardName": "Card 02",
+            "bankName": "Nubank",
+            "description": "Nubank cards",
+            "maxCredit": 5000,
+            "active": true,
+            "annualFee": 0,
+            "interestRate": 13.5,
+            "introOffer": 200,
+            "recommededCreditScore": "300-500",
+            "numberOfApplications": 40,
+            "createdDate": "30-06=2024",
+            "termsAndConditions": "The following conditions are applicable for this card"
+        },
+        {
+            "id": 3,
+            "cardName": "Card 03",
+            "bankName": "PicPay",
+            "description": "PicPay cards",
+            "maxCredit": 10000,
+            "active": false,
+            "annualFee": 0,
+            "interestRate": 11.5,
+            "introOffer": 150,
+            "recommededCreditScore": "800-1000",
+            "numberOfApplications": 20,
+            "createdDate": "01-07-2024",
+            "termsAndConditions": "The following conditions are applicable for this card"
+        }
+    ]
+}
