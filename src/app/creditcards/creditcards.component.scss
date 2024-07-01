@@ -1,0 +1,17 @@
+.stats {
+    display: flex;
+    flex-direction: row;
+}
+
+.mat-card {
+    margin: 1rem;
+
+    table {
+        width: 100%;
+    }
+}
+
+.count-card {
+    width: 25%;
+    background-color: lightgrey;
+}

@@ -1,0 +1,66 @@
+<div class="stats">
+    <mat-card class="mat-card count-card">
+        <mat-card-header>
+            <mat-card-title>Num of Cards</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>10</mat-card-content>
+    </mat-card>
+    <mat-card class="mat-card count-card">
+        <mat-card-header>
+            <mat-card-title>Num of Cards</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>11</mat-card-content>
+    </mat-card>
+    <mat-card class="mat-card count-card">
+        <mat-card-header>
+            <mat-card-title>Num of Cards</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>12</mat-card-content>
+    </mat-card>
+    <mat-card class="mat-card count-card">
+        <mat-card-header>
+            <mat-card-title>Num of Cards</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>13</mat-card-content>
+    </mat-card>
+</div>
+<mat-card class="mat-card">
+    <mat-card-header>
+        <mat-card-title>Listing All Credit Cards</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <table mat-table [dataSource]="dataSource" matSort>
+            <ng-container matColumnDef="select">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let element">
+                    <mat-checkbox></mat-checkbox>
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef>ID</th>
+                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+            <ng-container matColumnDef="cardName">
+                <th mat-header-cell *matHeaderCellDef>CARD NAME</th>
+                <td mat-cell *matCellDef="let element"> {{element.cardName}} </td>
+            </ng-container>
+            <ng-container matColumnDef="bankName">
+                <th mat-header-cell *matHeaderCellDef>BANK NAME</th>
+                <td mat-cell *matCellDef="let element"> {{element.bankName}} </td>
+            </ng-container>
+            <ng-container matColumnDef="maxCredit">
+                <th mat-header-cell *matHeaderCellDef>MAX CREDIT</th>
+                <td mat-cell *matCellDef="let element"> {{element.maxCredit}} </td>
+            </ng-container>
+            <ng-container matColumnDef="active">
+                <th mat-header-cell *matHeaderCellDef>ACTIVE</th>
+                <td mat-cell *matCellDef="let element"> {{element.active}} </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="[2, 4, 6]" showFirstLastButtons
+            aria-label="Select page of periodic elements">
+        </mat-paginator>
+    </mat-card-content>
+</mat-card>
