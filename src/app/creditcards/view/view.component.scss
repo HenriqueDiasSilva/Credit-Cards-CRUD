@@ -1,0 +1,15 @@
+.details {
+    justify-content: space-around;
+}
+
+.card-details {
+    margin: 1rem;
+    box-sizing: border-box;
+    background-color: lightgrey;
+}
+
+@media (max-width: 768px) {
+    .details {
+        flex-direction: column;
+    }
+}

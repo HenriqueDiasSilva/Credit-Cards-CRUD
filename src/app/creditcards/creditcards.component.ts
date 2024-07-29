@@ -35,6 +35,7 @@ export class CreditcardsComponent {
     'bankName',
     'maxCredit',
     'active',
+    'actions'
   ];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;

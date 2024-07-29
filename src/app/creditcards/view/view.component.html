@@ -1,1 +1,43 @@
-<p>view works!</p>
+<div class="details">
+    <mat-card class="mat-card card-details">
+        <mat-card-header>
+            <mat-card-title>Basic Information</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div><b>Id:</b> {{creditCardDetails.id}}</div>
+            <div><b>Card Name:</b> {{creditCardDetails.cardName}}</div>
+            <div><b>Bank Name:</b> {{creditCardDetails.bankName}}</div>
+            <div><b>Description:</b> {{creditCardDetails.description}}</div>
+        </mat-card-content>
+    </mat-card>
+    <mat-card class="mat-card card-details">
+        <mat-card-header>
+            <mat-card-title>Financial Details</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div><b>Max Credit:</b> {{creditCardDetails.maxCredit}}</div>
+            <div><b>Interest Rate:</b> {{creditCardDetails.interestRate}}</div>
+            <div><b>Annual Fee:</b> {{creditCardDetails.annualFee}}</div>
+            <div><b>Intro Offer:</b> {{creditCardDetails.introOffer}}</div>
+        </mat-card-content>
+    </mat-card>
+    <mat-card class="mat-card card-details">
+        <mat-card-header>
+            <mat-card-title>Eligibility</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div><b>Active:</b> {{creditCardDetails.active}}</div>
+            <div><b>Recommeded Credit Score:</b> {{creditCardDetails.recommededCreditScore}}</div>
+            <div><b>Number Of Applications:</b> {{creditCardDetails.numberOfApplications}}</div>
+        </mat-card-content>
+    </mat-card>
+    <mat-card class="mat-card card-details">
+        <mat-card-header>
+            <mat-card-title>Additional Information</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div><b>Created Date:</b> {{creditCardDetails.createdDate}}</div>
+            <div><b>Terms And Conditions:</b> {{creditCardDetails.termsAndConditions}}</div>
+        </mat-card-content>
+    </mat-card>
+</div>

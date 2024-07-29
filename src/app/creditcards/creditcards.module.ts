@@ -11,6 +11,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatTableModule,
     MatCheckboxModule,
     MatPaginatorModule,
+    MatIconModule,
   ],
 })
 export class CreditcardsModule {}
