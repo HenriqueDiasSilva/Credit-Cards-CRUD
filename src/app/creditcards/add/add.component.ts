@@ -23,6 +23,6 @@ export class AddComponent {
   }
 
   saveCreditCard(){
-    console.log("Henrique");
+    console.log(this.newCreditCard);
   }
 }

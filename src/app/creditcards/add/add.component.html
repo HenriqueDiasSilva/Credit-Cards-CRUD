@@ -1,44 +1,45 @@
 <mat-card class="mat-card">
   <mat-card-header>
     <mat-card-title>Add New Credit Card</mat-card-title>
+    <mat-checkbox name="active" [(ngModel)]="newCreditCard.active">Active</mat-checkbox>
   </mat-card-header>
   <mat-card-content>
     <form #creditCardForm="ngForm" (ngSubmit)="saveCreditCard()">
         <div class="form-group">
-            <mat-form-field class="field">
+             <mat-form-field appearance="outline">
                 <mat-label>Card Name</mat-label>
                 <input matInput name="cardName" [(ngModel)]="newCreditCard.cardName" minlength="3" maxlength="20" required/>
                 <mat-error *ngIf="creditCardForm.controls['cardName']?.touched && creditCardForm.controls['cardName']?.hasError('required')">Card Name is required</mat-error>
                 <mat-error *ngIf="creditCardForm.controls['cardName']?.touched && creditCardForm.controls['cardName']?.hasError('minlength')">Card Name must have atleast 3 characters</mat-error>
                 <mat-error *ngIf="creditCardForm.controls['cardName']?.touched && creditCardForm.controls['cardName']?.hasError('maxlength')">Card Name cannot be more than 20 characters</mat-error>
               </mat-form-field>
-            <mat-form-field class="field">
+             <mat-form-field appearance="outline">
                   <mat-label>Bank Name</mat-label>
                   <input matInput name="bankName" [(ngModel)]="newCreditCard.bankName" minlength="3" maxlength="20" required/>
                   <mat-error *ngIf="creditCardForm.controls['bankName']?.touched && creditCardForm.controls['bankName']?.hasError('required')">Bank Name is required</mat-error>
                   <mat-error *ngIf="creditCardForm.controls['bankName']?.touched && creditCardForm.controls['bankName']?.hasError('minlength')">Bank Name must have atleast 3 characters</mat-error>
                   <mat-error *ngIf="creditCardForm.controls['bankName']?.touched && creditCardForm.controls['bankName']?.hasError('maxlength')">Bank Name cannot be more than 20 characters</mat-error>
             </mat-form-field>
-            <mat-form-field class="field">
+             <mat-form-field appearance="outline">
                 <mat-label>Max Credit Card</mat-label>
                 <input matInput name="maxCredit" [(ngModel)]="newCreditCard.maxCredit" maxlength="20" required/>
                 <mat-error *ngIf="creditCardForm.controls['maxCredit']?.touched && creditCardForm.controls['maxCredit']?.hasError('required')">Max Credit Card is required</mat-error>
                 <mat-error *ngIf="creditCardForm.controls['maxCredit']?.touched && creditCardForm.controls['maxCredit']?.hasError('maxlength')">Max Credit Card cannot be more than 20 characters</mat-error>
             </mat-form-field>
-            <mat-form-field class="field">
+             <mat-form-field appearance="outline">
                 <mat-label>Interest Rate</mat-label>
                 <input matInput name="interestRate" [(ngModel)]="newCreditCard.interestRate" maxlength="20" required/>
                 <mat-error *ngIf="creditCardForm.controls['interestRate']?.touched && creditCardForm.controls['interestRate']?.hasError('required')">Interest Rate is required</mat-error>
                 <mat-error *ngIf="creditCardForm.controls['interestRate']?.touched && creditCardForm.controls['interestRate']?.hasError('maxlength')">Interest Rate cannot be more than 20 characters</mat-error>
             </mat-form-field>
-            <mat-form-field class="field">
+             <mat-form-field appearance="outline">
                 <mat-label>Annual Fee</mat-label>
                 <input matInput name="annualFee" [(ngModel)]="newCreditCard.annualFee" maxlength="20" required/>
                 <mat-error *ngIf="creditCardForm.controls['annualFee']?.touched && creditCardForm.controls['annualFee']?.hasError('required')">Annual Fee is required</mat-error>
                 <mat-error *ngIf="creditCardForm.controls['annualFee']?.touched && creditCardForm.controls['annualFee']?.hasError('maxlength')">Annual Fee cannot be more than 20 characters</mat-error>
             </mat-form-field>
-            <mat-form-field class="field">
-                <mat-label>Select your Recommend Score</mat-label>
+             <mat-form-field appearance="outline">
+                <mat-label>Recommend Score</mat-label>
                 <mat-select name="recommededCreditScore" [(ngModel)]="newCreditCard.recommededCreditScore">
                     <mat-option value="100-500">100-500</mat-option>
                     <mat-option value="300-500">300-500</mat-option>
@@ -46,16 +47,25 @@
                     <mat-option value="400-600">400-600</mat-option>
                 </mat-select>
             </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Created Date</mat-label>
+                <input matInput name="createdDate" [(ngModel)]="newCreditCard.createdDate" [matDatepicker]="picker" required>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-error *ngIf="creditCardForm.controls['createdDate']?.touched && creditCardForm.controls['createdDate']?.hasError('required')">Created Date is required</mat-error>
+            </mat-form-field>
         </div>
         <div class="form-group">
-            <mat-form-field class="field">
+            <mat-form-field appearance="outline">
                 <mat-label>Description</mat-label>
                 <textarea matInput name="description" [(ngModel)]="newCreditCard.description" required></textarea>
                 <mat-error *ngIf="creditCardForm.controls['description']?.touched && creditCardForm.controls['description']?.hasError('required')">Description is required</mat-error>
             </mat-form-field>
         </div>
         <div class="form-group">
-            <mat-checkbox name="active" [(ngModel)]="newCreditCard.active">Active</mat-checkbox>
+            <div class="button">
+                <button mat-raised-button color="primary" [disabled]="!creditCardForm.valid">Save</button>
+            </div>
         </div>
     </form>
   </mat-card-content>
